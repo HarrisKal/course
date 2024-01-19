@@ -110,20 +110,60 @@ class BinarySearchTree {
 		traverse(curr);
 		return visited;
 	}
+
+	// Depth first traversal PostOrder goes through each node starting
+	// from the root, going to the leftest child, and traversing its
+	// sibling, and then going up. In order to recognise a node, all 
+	// of its children have to be visited.
+
+	DFS_PostOrderTraverse() {
+		let visited = [];
+		let curr = this.root;
+
+		function traverse(node) {
+			if (node.left) traverse(node.left);
+			if (node.right) traverse(node.right);
+
+			visited.push(node.val);
+		}
+
+		traverse(curr);
+		return visited;
+	}
+
+	// Depth first traversal InOrder goes through each node starting
+	// from the root, going to the leftest child, and traversing its
+	// parent, then the siblings and its children. In order to 
+	// recognise a node, all of its left children have to be visited.
+	// Returns array in ascending order
+
+	DFS_InOrderTraverse() {
+		let visited = [];
+		let curr = this.root;
+
+		function traverse(node) {
+			if (node.left) traverse(node.left);
+			visited.push(node.val);
+
+			if (node.right) traverse(node.right);
+
+		}
+
+		traverse(curr);
+		return visited;
+	}
 }
 
 
-let tree = new BinarySearchTree()
-	.insert(10)
-	.insert(6)
-	.insert(15)
-	.insert(8)
-	.insert(3)
-	.insert(20);
+// let tree = new BinarySearchTree()
+// 	.insert(10)
+// 	.insert(6)
+// 	.insert(15)
+// 	.insert(8)
+// 	.insert(3)
+// 	.insert(20);
 
-console.log(tree.DFS_PreOrderTraverse())
-// 		10
-// 	 6		15
-// 	3  8	  20
-// 
+// tree.DFS_PreOrderTraverse() [10,6,3,8,15,20]
+// tree.DFS_PostOrderTraverse()[3,8,6,20,15,10]
+// tree.DFS_InOrderTraverse()  [3,6,8,10,15,20]
 
