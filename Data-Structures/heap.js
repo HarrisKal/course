@@ -8,6 +8,10 @@
 // indexOf(LeftChild) = 2*i + 1, indexOf(RightChild) = 2*i + 2
 // indexOf(Parent) = Math.floor( (i-1)/2 )
 
+// Insertion: O(log n)
+// Deletion: O(log n)
+// Searching: O(n)
+
 Array.prototype.swap = function (i1, i2) {
     // Take two indexes of an array and swap them.
     [this[i1], this[i2]] = [this[i2], this[i1]]
@@ -44,11 +48,11 @@ class MaxBinaryHeap {
                 let swap = null;
 
                 if (leftCi < length) {
-                    leftC = this.values[leftCi];
+                    lefthis.values[leftCi];
                     if (leftC > element) swap = leftCi;
                 }
                 if (rightCi < length) {
-                    rightC = this.values[rightCi];
+                    righthis.values[rightCi];
                     if (
                         (swap === null && rightC > element) ||
                         (swap !== null && rightC > leftC)
