@@ -2,9 +2,9 @@
 // Elements with higher priorities ae served before ones with lower.
 // A lower number usually means a higher priority.
 
-// Insertion: (log n)
-// Deletion: (log n)
-// Searching: (n)
+// Insertion: O(log n)
+// Deletion: O(log n)
+// Searching: O(n)
 
 class Node {
     constructor(val, priority) {

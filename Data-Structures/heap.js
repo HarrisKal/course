@@ -48,11 +48,11 @@ class MaxBinaryHeap {
                 let swap = null;
 
                 if (leftCi < length) {
-                    lefthis.values[leftCi];
+                    leftC = this.values[leftCi];
                     if (leftC > element) swap = leftCi;
                 }
                 if (rightCi < length) {
-                    righthis.values[rightCi];
+                    rightC = this.values[rightCi];
                     if (
                         (swap === null && rightC > element) ||
                         (swap !== null && rightC > leftC)
