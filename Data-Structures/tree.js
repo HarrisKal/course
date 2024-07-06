@@ -5,11 +5,11 @@
 // Child: Node connected to another node by moving from the root.
 // Parent: The node connected to by a  node.
 // Siblings: A group of nodes with the same parent.
-// Leaf: A node that does not have any ren.
+// Leaf: A node that does not have any children.
 // Edge: The connection between two nodes.
 
 // A Binary Tree is just like a regular tree except for:
-// Every node must have from 0 to 2 ren, no more, no less.
+// Every node must have from 0 to 2 children, no more, no less.
 
 // A Binary Search Tree is just like a regular Binary Tree, but
 // every node left of a parent is always less than the parent,
