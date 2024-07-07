@@ -74,6 +74,27 @@ class PriorityQueue {
     }
 }
 
+// A simpler, less efficient implementation
+
+class SimplePriorityQueue {
+    constructor() {
+        this.values = [];
+    }
+
+    enqueue(val, priority) {
+        this.values.push({ val, priority });
+        this.sort();
+    }
+
+    dequeue() {
+        return this.values.shift();
+    }
+
+    sort() {
+        this.values.sort((a, b) => a.priority - b.priority);
+    }
+}
+
 let priorityQueue = new PriorityQueue();
 priorityQueue.enqueue('a', 1).enqueue('b', 5).enqueue('c', 2).enqueue('d', 4).dequeue()
 console.log(priorityQueue)
