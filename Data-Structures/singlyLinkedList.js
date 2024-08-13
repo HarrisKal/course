@@ -166,4 +166,32 @@ class SinglyLinkedList {
             return this;
         }
     }
+
+    rotate(n) {
+        if (n >= 0) {
+            for (let i = 0; i < n; i++) {
+                let curr = this.head;
+                this.head = curr.next;
+                curr.next = null;
+                this.tail.next = curr;
+                this.tail = curr;
+            }
+        } else {
+            for (let i = 0; i > n; i--) {
+
+                let secToLast = this.head;
+                for (let j = 1; j < this.length - 1; j++) {
+                    secToLast = secToLast.next;
+                }
+
+                let oldTail = this.tail;
+                let oldHead = this.head;
+                oldTail.next = oldHead;
+                this.head = oldTail;
+                secToLast.next = null;
+                this.tail = secToLast;
+            }
+        }
+        return this;
+    }
 }
